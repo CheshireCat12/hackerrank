@@ -9,12 +9,20 @@ from itertools import permutations
 
 # Complete the absolutePermutation function below.
 def absolutePermutation(n, k):
-    position = list(range(1, n+1))
-    for permutation in permutations(position):
-        if all(abs(pos-perm) == k
-               for pos, perm
-               in zip(position, permutation)):
-            return permutation
+
+    if k == 0:
+        return list(range(1, n+1))
+
+    if n % (2*k) == 0:
+        tmp = k
+        permutation = []
+        for i in range(1, n+1):
+            permutation.append(i+tmp)
+
+            if i % k == 0:
+                tmp = -1 * tmp
+
+        return permutation
 
     return [-1]
 
