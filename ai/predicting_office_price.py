@@ -15,7 +15,7 @@ import numpy as np
 from sklearn.model_selection import cross_val_score
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import PolynomialFeatures
-from sklearn import metrics
+
 
 def main():
     nb_features, len_dataset = [int(val) for val in input().split()]
@@ -23,7 +23,7 @@ def main():
     len_validation_set = int(input())
     X_val = np.array([input().split() for _ in range(len_validation_set)], float)
 
-    X, y = dataset[:,:-1], dataset[:,-1]
+    X, y = dataset[:, :-1], dataset[:, -1]
 
     l_model = LinearRegression()
     best_poly = (float("-INF"), 0)
