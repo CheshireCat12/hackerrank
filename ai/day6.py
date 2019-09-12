@@ -13,6 +13,7 @@ https://www.hackerrank.com/challenges/predicting-house-prices/problem
 import numpy as np
 from sklearn.linear_model import LinearRegression
 
+
 def main():
     F, H = [int(val) for val in input().split()]
     dataset = np.array([input().split() for _ in range(H)], float)
