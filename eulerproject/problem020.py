@@ -1,7 +1,7 @@
 def create_factorial(num):
-    factorials = [1]
+    factorials = [1] * (num+1)
     for i in range(1, num+1):
-        factorials.append(factorials[-1]*i)
+        factorials[i] = factorials[i-1]*i
 
     return factorials
 
