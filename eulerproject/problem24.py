@@ -12,7 +12,7 @@ def is_in_range(position: int, ord_letter: int, boundary: int, offset: int) -> b
     return lower_bound <= position <= upper_bound
 
 
-def lexicographe(position: int, letters: str = '', offset: int = 0) -> int:
+def lexicograph(position: int, letters: str = '', offset: int = 0) -> int:
     """
     Compute the lexicographic permutation of the given position
     """
@@ -27,13 +27,13 @@ def lexicographe(position: int, letters: str = '', offset: int = 0) -> int:
         if is_in_range(position, i, boundary, offset):
             offset += i * boundary
 
-            return lexicographe(position, letters + current_letter, offset)
+            return lexicograph(position, letters + current_letter, offset)
 
 
 def main():
     nb_tests = int(input().strip())
 
-    print(*[lexicographe(int(input().strip())) for _ in range(nb_tests)],
+    print(*[lexicograph(int(input().strip())) for _ in range(nb_tests)],
           sep='\n')
 
 
